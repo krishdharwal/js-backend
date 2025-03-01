@@ -8,7 +8,11 @@ app.get('/app',(req,res) => {
     res.send("HELLO");
 })
 
-const port = process.env.PORT || 5000;
+app.get('/kd',(req,res) => {
+    res.send("shit fuck man")
+})
+
+const port = process.env.PORT || 4000;
 app.listen(port,() => {
     console.log(`App running on port = ${port}`)
 })
