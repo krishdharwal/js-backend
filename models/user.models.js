@@ -2,8 +2,9 @@
 // that will going to be stored in db 
 import mongoose from "mongoose";
 
-// write the data schema or entity
-const userDefine = mongoose.Schema({
+// write the data schema or entity , 
+// dont forget to use "new"
+const userDefine = new mongoose.Schema({
     name: {
         type: String,
         required: true,
