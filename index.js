@@ -1,23 +1,19 @@
-import express from 'express';
 import dotenv from 'dotenv';
-import dbConnector from './db.js';
+import dbConnector from './db/db.js';
+import { app } from './routes/app.js';
 
 dotenv.config({
    path: './.env'
 })
 
-const app = express()
+let port = process.env.PORT || 5000;
 
-app.get('/app',(req,res) => {
-    res.send("HELLO");
-})
+dbConnector()
+.then(() => {
+  app.listen(port,() => {
+    console.log(`⚙️ Server is running at port : ${port}`);
+  })
 
-app.get('/kd',(req,res) => {
-    res.send("shit fuck man")
-})
-
-const port = process.env.PORT || 4000;
-
-app.listen(port,() => {
-    console.log(`App running on port = ${port}`)
+}).catch( (error) => {
+    console.log("ERROR IN INDEX JS IN MONGO DB" , error);
 })
