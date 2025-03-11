@@ -9,6 +9,7 @@ const registerUser = asyncHandler( async (req, res) => {
     // if(!name || !password){
     //     return res.status(400).json(new ApiResponse(400, null, "Name and password are required"));
     // }
+    
     // create the user
     const createdUser = await User.create({
         name,
