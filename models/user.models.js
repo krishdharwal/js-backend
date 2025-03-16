@@ -1,6 +1,6 @@
 // import mongoose to model a data 
 // that will going to be stored in db 
-import mongoose from "mongoose";
+import mongoose, { Schema } from "mongoose";
 
 // write the data schema or entity , 
 // dont forget to use "new"
@@ -13,7 +13,28 @@ const userDefine = new mongoose.Schema({
     },
     password: {
         type: String,
-        required: true
+        required: [true,"password is required"]
+    },
+    email: {
+        type: String,
+        required: false,
+        index: true
+    },
+    avatar: {
+        type: String
+    },
+    coverImage: {
+        type: String
+    },
+    // used array to add the videos history 
+    watchHistory: [
+        {
+            type: Schema.Types.ObjectId,
+            ref: "Videos"
+        }
+    ],
+    refreshToken: {
+        type: String
     }
 },{timestamps: true})
 

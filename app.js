@@ -20,7 +20,7 @@ app.use(express.urlencoded({extended: true}))
 
 
 // routes imported
-import userRoute from "./user.routes.js"
+import userRoute from "./routes/user.routes.js"
 
 // routes declaration
 app.use("/user",userRoute)
