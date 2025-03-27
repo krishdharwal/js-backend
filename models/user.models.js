@@ -27,12 +27,12 @@ const userDefine = new mongoose.Schema({
         type: String
     },
     // used array to add the videos history 
-    watchHistory: [
-        {
-            type: Schema.Types.ObjectId,
-            ref: "Videos"
-        }
-    ],
+    // watchHistory: [
+    //     {
+    //         type: Schema.Types.ObjectId,
+    //         ref: "Videos"
+    //     }
+    // ],
     refreshToken: {
         type: String
     }

@@ -3,6 +3,8 @@
 // Routes storage 
 import cors from "cors"
 import express from "express";
+import multer from "multer";
+const upload = multer();
 // import cookieParser from "cookie-parser"
 
 const app = express()
