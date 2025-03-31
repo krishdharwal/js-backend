@@ -6,7 +6,7 @@ dotenv.config({
    path: './.env'
 })
 
-let port = process.env.PORT || 5000;
+let port = process.env.PORT || 4000;
 
 dbConnector()
 .then(() => {
